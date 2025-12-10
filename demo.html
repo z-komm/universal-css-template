@@ -941,6 +941,470 @@ function sum(a, b) {
             </div>
         </section>
 
+        <!-- ==================== DROPDOWNS ==================== -->
+        <section id="dropdowns" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-caret-square-down mr-2"></i>Dropdowns</h2>
+            <p class="demo-subtitle">Dropdown menus with various styles and positions</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Basic Dropdown -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Basic Dropdown</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <button class="btn-secondary dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+                                Options <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left">
+                                <a href="#" class="dropdown-item"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-archive"></i> Archive</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item dropdown-item-danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">User Dropdown</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <button class="flex items-center gap-2 dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+                                <div class="avatar avatar-sm">JD</div>
+                                <span class="font-medium">John Doe</span>
+                                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left" style="min-width: 14rem;">
+                                <div class="dropdown-user-header">
+                                    <div class="dropdown-user-name">John Doe</div>
+                                    <div class="dropdown-user-role">Administrator</div>
+                                </div>
+                                <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Profile</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Notification Badge</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <button class="btn-icon relative dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+                                <i class="fas fa-bell"></i>
+                                <span class="notification-badge-count">3</span>
+                            </button>
+                            <div class="dropdown-menu" style="min-width: 18rem;">
+                                <div class="dropdown-header">Notifications</div>
+                                <a href="#" class="notification-item notification-item-unread">
+                                    <div class="notification-title"><span class="notification-dot"></span><strong>New comment</strong> on your post</div>
+                                    <div class="notification-time">2 minutes ago</div>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <div class="notification-title"><strong>Sarah</strong> started following you</div>
+                                    <div class="notification-time">1 hour ago</div>
+                                </a>
+                                <a href="#" class="notification-item">
+                                    <div class="notification-title">Your post was <strong>featured</strong></div>
+                                    <div class="notification-time">Yesterday</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TOOLTIPS ==================== -->
+        <section id="tooltips" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-comment-alt mr-2"></i>Tooltips</h2>
+            <p class="demo-subtitle">Pure CSS tooltips with different positions</p>
+
+            <div class="demo-grid justify-center py-8">
+                <div class="tooltip tooltip-top">
+                    <button class="btn-secondary">Top</button>
+                    <span class="tooltip-content">Tooltip on top</span>
+                </div>
+                <div class="tooltip tooltip-bottom">
+                    <button class="btn-secondary">Bottom</button>
+                    <span class="tooltip-content">Tooltip on bottom</span>
+                </div>
+                <div class="tooltip tooltip-left">
+                    <button class="btn-secondary">Left</button>
+                    <span class="tooltip-content">Tooltip on left</span>
+                </div>
+                <div class="tooltip tooltip-right">
+                    <button class="btn-secondary">Right</button>
+                    <span class="tooltip-content">Tooltip on right</span>
+                </div>
+                <div class="tooltip tooltip-top tooltip-light">
+                    <button class="btn-secondary">Light</button>
+                    <span class="tooltip-content">Light tooltip variant</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SEARCH MODAL ==================== -->
+        <section id="search-modal" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-search mr-2"></i>Search Modal / Command Palette</h2>
+            <p class="demo-subtitle">Spotlight-style search modal</p>
+
+            <button class="btn-primary" onclick="document.getElementById('demoSearchBackdrop').classList.add('active'); document.getElementById('demoSearchModal').classList.add('active'); document.getElementById('demoSearchInput').focus();">
+                <i class="fas fa-search mr-2"></i>Open Search (⌘K)
+            </button>
+
+            <!-- Search Modal -->
+            <div id="demoSearchBackdrop" class="search-modal-backdrop" onclick="this.classList.remove('active'); document.getElementById('demoSearchModal').classList.remove('active');"></div>
+            <div id="demoSearchModal" class="search-modal">
+                <div class="search-modal-input-wrapper">
+                    <i class="fas fa-search search-modal-icon"></i>
+                    <input type="text" id="demoSearchInput" class="search-modal-input" placeholder="Search pages, actions, settings...">
+                    <kbd class="search-modal-kbd">ESC</kbd>
+                </div>
+                <div class="search-modal-results">
+                    <div class="search-modal-section">
+                        <div class="search-modal-section-title">Recent</div>
+                        <a href="#" class="search-modal-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Dashboard Overview</span>
+                        </a>
+                        <a href="#" class="search-modal-item">
+                            <i class="fas fa-users"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </div>
+                    <div class="search-modal-section">
+                        <div class="search-modal-section-title">Actions</div>
+                        <a href="#" class="search-modal-item">
+                            <i class="fas fa-plus"></i>
+                            <span>Create new project</span>
+                        </a>
+                        <a href="#" class="search-modal-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Open settings</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="search-modal-footer">
+                    <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+                    <span><kbd>↵</kbd> to select</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DASHBOARD CARDS ==================== -->
+        <section id="dashboard-cards" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-chart-line mr-2"></i>Dashboard Cards</h2>
+            <p class="demo-subtitle">Stat cards and dashboard widgets</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="stat-card-label">Total Revenue</div>
+                        <div class="stat-card-icon stat-card-icon-brand"><i class="fas fa-dollar-sign"></i></div>
+                    </div>
+                    <div class="stat-card-value">$24,780</div>
+                    <div class="stat-card-change stat-card-change-positive">
+                        <i class="fas fa-arrow-up text-xs"></i> +12.5%
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="stat-card-label">New Users</div>
+                        <div class="stat-card-icon stat-card-icon-success"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="stat-card-value">1,429</div>
+                    <div class="stat-card-change stat-card-change-positive">
+                        <i class="fas fa-arrow-up text-xs"></i> +8.2%
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="stat-card-label">Bounce Rate</div>
+                        <div class="stat-card-icon stat-card-icon-warning"><i class="fas fa-chart-bar"></i></div>
+                    </div>
+                    <div class="stat-card-value">32.4%</div>
+                    <div class="stat-card-change stat-card-change-negative">
+                        <i class="fas fa-arrow-down text-xs"></i> -2.1%
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card">
+                    <div class="flex items-center justify-between">
+                        <div class="stat-card-label">Active Sessions</div>
+                        <div class="stat-card-icon stat-card-icon-info"><i class="fas fa-signal"></i></div>
+                    </div>
+                    <div class="stat-card-value">847</div>
+                    <div class="stat-card-change stat-card-change-positive">
+                        <i class="fas fa-arrow-up text-xs"></i> +5.7%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Card with Header -->
+            <div class="dashboard-card max-w-md">
+                <div class="dashboard-card-header">
+                    <h3 class="dashboard-card-title">Recent Activity</h3>
+                    <div class="dropdown">
+                        <button class="btn-icon dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">View all</a>
+                            <a href="#" class="dropdown-item">Export</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card-body">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="avatar avatar-sm bg-green-500">JD</div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">John created a new project</p>
+                                <p class="text-xs text-gray-500">2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="avatar avatar-sm bg-blue-500">SM</div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium">Sarah commented on your post</p>
+                                <p class="text-xs text-gray-500">4 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card-footer text-center">
+                    <a href="#" class="text-sm text-brand font-medium">View all activity</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AVATARS ==================== -->
+        <section id="avatars" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-user-circle mr-2"></i>Avatars</h2>
+            <p class="demo-subtitle">Avatar components with sizes, groups, and status indicators</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Sizes & Styles</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="demo-grid items-end">
+                            <div class="text-center">
+                                <div class="avatar avatar-xs">XS</div>
+                                <p class="text-xs mt-1">XS</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="avatar avatar-sm">SM</div>
+                                <p class="text-xs mt-1">SM</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="avatar">MD</div>
+                                <p class="text-xs mt-1">Default</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="avatar avatar-lg">LG</div>
+                                <p class="text-xs mt-1">LG</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="avatar avatar-xl">XL</div>
+                                <p class="text-xs mt-1">XL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Status & Groups</h3>
+                    </div>
+                    <div class="card-body space-y-4">
+                        <div>
+                            <p class="demo-label">Status Indicators</p>
+                            <div class="demo-grid">
+                                <div class="avatar avatar-status">ON</div>
+                                <div class="avatar avatar-status avatar-status-away">AW</div>
+                                <div class="avatar avatar-status avatar-status-busy">BY</div>
+                                <div class="avatar avatar-status avatar-status-offline">OF</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="demo-label">Avatar Group</p>
+                            <div class="avatar-group">
+                                <div class="avatar bg-blue-500">A</div>
+                                <div class="avatar bg-green-500">B</div>
+                                <div class="avatar bg-yellow-500">C</div>
+                                <div class="avatar bg-red-500">D</div>
+                                <div class="avatar bg-gray-400">+3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ACCORDION ==================== -->
+        <section id="accordion" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-layer-group mr-2"></i>Accordion</h2>
+            <p class="demo-subtitle">Collapsible content sections</p>
+
+            <div class="accordion max-w-2xl">
+                <div class="accordion-item active">
+                    <button class="accordion-trigger" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What is this CSS template?</span>
+                        <i class="fas fa-chevron-down accordion-trigger-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>This is a universal, app-agnostic CSS template built on Tailwind CSS v4. It provides 100+ reusable component classes that work across any web project without framework dependencies.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How do I customize the brand colors?</span>
+                        <i class="fas fa-chevron-down accordion-trigger-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simply modify the CSS custom properties in the :root selector. Change --color-brand, --color-brand-light, and --color-brand-dark to match your brand identity.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Does it support dark mode?</span>
+                        <i class="fas fa-chevron-down accordion-trigger-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! Add the .dark class to your HTML element or use the automatic prefers-color-scheme media query. All components automatically adapt to dark mode.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TABS ==================== -->
+        <section id="tabs" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-folder mr-2"></i>Tabs</h2>
+            <p class="demo-subtitle">Tab navigation with different styles</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Underline Tabs</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="tabs" id="tabsDemo1">
+                            <div class="tabs-list">
+                                <button class="tab-trigger active" onclick="switchTab(this, 'tab1-1')">Overview</button>
+                                <button class="tab-trigger" onclick="switchTab(this, 'tab1-2')">Details</button>
+                                <button class="tab-trigger" onclick="switchTab(this, 'tab1-3')">Settings</button>
+                            </div>
+                            <div class="tab-content active" id="tab1-1">
+                                <p class="text-gray-600">Overview tab content. This is the default active tab.</p>
+                            </div>
+                            <div class="tab-content" id="tab1-2">
+                                <p class="text-gray-600">Details tab content with more information.</p>
+                            </div>
+                            <div class="tab-content" id="tab1-3">
+                                <p class="text-gray-600">Settings tab content for configuration options.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-semibold">Pill Tabs</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="tabs" id="tabsDemo2">
+                            <div class="tabs-list tabs-list-pills">
+                                <button class="tab-trigger active" onclick="switchTab(this, 'tab2-1')">Day</button>
+                                <button class="tab-trigger" onclick="switchTab(this, 'tab2-2')">Week</button>
+                                <button class="tab-trigger" onclick="switchTab(this, 'tab2-3')">Month</button>
+                            </div>
+                            <div class="tab-content active" id="tab2-1">
+                                <p class="text-gray-600">Daily view selected.</p>
+                            </div>
+                            <div class="tab-content" id="tab2-2">
+                                <p class="text-gray-600">Weekly view selected.</p>
+                            </div>
+                            <div class="tab-content" id="tab2-3">
+                                <p class="text-gray-600">Monthly view selected.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SWITCHES ==================== -->
+        <section id="switches" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-toggle-on mr-2"></i>Switches</h2>
+            <p class="demo-subtitle">Toggle switches with different sizes</p>
+
+            <div class="card max-w-md">
+                <div class="card-body space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">Email notifications</span>
+                        <label class="switch">
+                            <input type="checkbox" class="switch-input" checked>
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">Push notifications</span>
+                        <label class="switch">
+                            <input type="checkbox" class="switch-input">
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">Dark mode</span>
+                        <label class="switch">
+                            <input type="checkbox" class="switch-input" onchange="toggleDarkMode()">
+                            <span class="switch-slider"></span>
+                        </label>
+                    </div>
+                    <div class="border-t pt-4">
+                        <p class="demo-label mb-4">Sizes</p>
+                        <div class="demo-grid items-center">
+                            <label class="switch switch-sm">
+                                <input type="checkbox" class="switch-input" checked>
+                                <span class="switch-slider"></span>
+                                <span class="switch-label">Small</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" class="switch-input" checked>
+                                <span class="switch-slider"></span>
+                                <span class="switch-label">Default</span>
+                            </label>
+                            <label class="switch switch-lg">
+                                <input type="checkbox" class="switch-input" checked>
+                                <span class="switch-slider"></span>
+                                <span class="switch-label">Large</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -979,6 +1443,36 @@ function sum(a, b) {
                 icon.classList.add('fa-sun');
             }
         }
+
+        // Tab switching function
+        function switchTab(trigger, contentId) {
+            const tabs = trigger.closest('.tabs');
+            // Remove active from all triggers
+            tabs.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
+            // Remove active from all content
+            tabs.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Add active to clicked trigger
+            trigger.classList.add('active');
+            // Add active to corresponding content
+            document.getElementById(contentId).classList.add('active');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+            }
+        });
+
+        // Close search modal on ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('demoSearchBackdrop').classList.remove('active');
+                document.getElementById('demoSearchModal').classList.remove('active');
+                document.getElementById('demoMobileMenu').classList.remove('active');
+                document.getElementById('demoBackdrop').classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
