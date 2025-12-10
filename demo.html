@@ -34,6 +34,7 @@
                 <div class="flex items-center gap-4">
                     <a href="#typography" class="nav-link">Typography</a>
                     <a href="#components" class="nav-link-active">Components</a>
+                    <a href="#navigation" class="nav-link">Navigation</a>
                     <a href="#utilities" class="nav-link">Utilities</a>
                     <button onclick="toggleDarkMode()" class="btn-icon text-white" title="Toggle Dark Mode">
                         <i class="fas fa-moon"></i>
@@ -691,6 +692,251 @@ function sum(a, b) {
                         <span class="linkedin-hashtag">#TailwindCSS</span>
                         <span class="linkedin-hashtag">#OpenSource</span>
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== NAVIGATION ==================== -->
+        <section id="navigation" class="demo-section">
+            <h2 class="demo-title"><i class="fas fa-bars mr-2"></i>Navigation Components</h2>
+            <p class="demo-subtitle">Desktop header, mobile burger menu, and sticky footer navigation</p>
+
+            <!-- Desktop Header Example -->
+            <div class="mb-8">
+                <p class="demo-label">Desktop Header (Gradient)</p>
+                <div class="header header-gradient rounded-lg overflow-hidden">
+                    <div class="header-container">
+                        <div class="header-left">
+                            <a href="#" class="header-logo">
+                                <i class="fas fa-rocket"></i>
+                                <span>MyApp</span>
+                            </a>
+                            <nav class="header-nav">
+                                <a href="#" class="nav-link-light nav-link-active">Dashboard</a>
+                                <a href="#" class="nav-link-light">Projects</a>
+                                <a href="#" class="nav-link-light">Team</a>
+                                <a href="#" class="nav-link-light">Settings</a>
+                            </nav>
+                        </div>
+                        <div class="header-right">
+                            <button class="btn-icon text-white desktop-only"><i class="fas fa-bell"></i></button>
+                            <button class="btn-icon text-white desktop-only"><i class="fas fa-user-circle"></i></button>
+                            <button class="burger text-white mobile-only" onclick="toggleDemoMenu()">
+                                <span class="burger-line"></span>
+                                <span class="burger-line"></span>
+                                <span class="burger-line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Header (Light) -->
+            <div class="mb-8">
+                <p class="demo-label">Desktop Header (Light)</p>
+                <div class="header rounded-lg overflow-hidden">
+                    <div class="header-container">
+                        <div class="header-left">
+                            <a href="#" class="header-logo">
+                                <i class="fas fa-cube text-brand"></i>
+                                <span>Dashboard</span>
+                            </a>
+                            <nav class="header-nav">
+                                <a href="#" class="nav-link nav-link-active">Home</a>
+                                <a href="#" class="nav-link">Analytics</a>
+                                <a href="#" class="nav-link">Reports</a>
+                                <a href="#" class="nav-link">Settings</a>
+                            </nav>
+                        </div>
+                        <div class="header-right">
+                            <button class="btn-icon desktop-only"><i class="fas fa-search"></i></button>
+                            <button class="btn-icon desktop-only"><i class="fas fa-bell"></i></button>
+                            <div class="w-8 h-8 rounded-full bg-brand flex items-center justify-center text-white text-sm font-medium desktop-only">JD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burger Menu Demo -->
+            <div class="mb-8">
+                <p class="demo-label">Burger Menu Button (animated on click)</p>
+                <div class="demo-grid">
+                    <div class="demo-box flex items-center gap-4">
+                        <button class="burger bg-gray-800 text-white" id="burgerDemo1" onclick="this.classList.toggle('active')">
+                            <span class="burger-line"></span>
+                            <span class="burger-line"></span>
+                            <span class="burger-line"></span>
+                        </button>
+                        <span class="text-sm text-gray-600">Click to toggle animation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Overlay Demo -->
+            <div class="mb-8">
+                <p class="demo-label">Mobile Menu Overlay</p>
+                <button class="btn-primary mb-4" onclick="document.getElementById('demoMobileMenu').classList.add('active'); document.getElementById('demoBackdrop').classList.add('active');">
+                    <i class="fas fa-bars mr-2"></i>Open Mobile Menu
+                </button>
+
+                <!-- Mobile Menu Backdrop -->
+                <div id="demoBackdrop" class="mobile-menu-backdrop" onclick="document.getElementById('demoMobileMenu').classList.remove('active'); this.classList.remove('active');"></div>
+
+                <!-- Mobile Menu -->
+                <div id="demoMobileMenu" class="mobile-menu" style="max-width: 320px;">
+                    <div class="mobile-menu-header">
+                        <a href="#" class="header-logo">
+                            <i class="fas fa-rocket text-brand"></i>
+                            <span>MyApp</span>
+                        </a>
+                        <button class="mobile-menu-close" onclick="document.getElementById('demoMobileMenu').classList.remove('active'); document.getElementById('demoBackdrop').classList.remove('active');">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="mobile-menu-body">
+                        <nav class="mobile-menu-nav">
+                            <a href="#" class="mobile-menu-link active">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-folder"></i>
+                                <span>Projects</span>
+                            </a>
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                            </a>
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+
+                            <div class="mobile-menu-divider"></div>
+                            <p class="mobile-menu-section-title">Account</p>
+
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help & Support</span>
+                            </a>
+                            <a href="#" class="mobile-menu-link">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Nav Demo -->
+            <div class="mb-8">
+                <p class="demo-label">Mobile Footer Navigation (Sticky Bottom)</p>
+                <p class="text-sm text-gray-500 mb-4">This shows on mobile devices (&lt;768px). Resize browser to see it in action, or view the static preview below:</p>
+
+                <!-- Static Preview -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white" style="max-width: 400px;">
+                    <div class="border-t border-gray-200 py-2" style="box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.05);">
+                        <div class="flex justify-around items-center max-w-md mx-auto">
+                            <a href="#" class="footer-nav-item active" style="display: flex;">
+                                <i class="fas fa-home"></i>
+                                <span class="footer-nav-label">Home</span>
+                            </a>
+                            <a href="#" class="footer-nav-item" style="display: flex;">
+                                <i class="fas fa-search"></i>
+                                <span class="footer-nav-label">Search</span>
+                            </a>
+                            <a href="#" class="footer-nav-action" style="display: flex;">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                            <a href="#" class="footer-nav-item" style="display: flex;">
+                                <i class="fas fa-bell"></i>
+                                <span class="footer-nav-label">Alerts</span>
+                            </a>
+                            <a href="#" class="footer-nav-item" style="display: flex;">
+                                <i class="fas fa-user"></i>
+                                <span class="footer-nav-label">Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav Link Variants -->
+            <div class="mb-8">
+                <p class="demo-label">Navigation Link Styles</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="font-semibold">Standard Nav Links</h3>
+                        </div>
+                        <div class="card-body">
+                            <nav class="nav">
+                                <a href="#" class="nav-link">Home</a>
+                                <a href="#" class="nav-link nav-link-active">Products</a>
+                                <a href="#" class="nav-link">About</a>
+                                <a href="#" class="nav-link">Contact</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="font-semibold">Tab Navigation</h3>
+                        </div>
+                        <div class="card-body">
+                            <nav class="nav nav-tabs">
+                                <a href="#" class="nav-link nav-link-active">Overview</a>
+                                <a href="#" class="nav-link">Details</a>
+                                <a href="#" class="nav-link">Reviews</a>
+                                <a href="#" class="nav-link">FAQ</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Code Example -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="font-semibold"><i class="fas fa-code mr-2"></i>Usage Examples</h3>
+                </div>
+                <div class="card-body">
+                    <p class="demo-label">Desktop Header with Gradient</p>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm font-mono overflow-x-auto mb-4"><code>&lt;header class="header header-gradient"&gt;
+  &lt;div class="header-container"&gt;
+    &lt;div class="header-left"&gt;
+      &lt;a href="#" class="header-logo"&gt;MyApp&lt;/a&gt;
+      &lt;nav class="header-nav"&gt;
+        &lt;a href="#" class="nav-link-light nav-link-active"&gt;Home&lt;/a&gt;
+        &lt;a href="#" class="nav-link-light"&gt;About&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;div class="header-right"&gt;
+      &lt;button class="burger text-white mobile-only"&gt;...&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+
+                    <p class="demo-label">Mobile Footer Navigation</p>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm font-mono overflow-x-auto"><code>&lt;nav class="footer-nav"&gt;
+  &lt;div class="footer-nav-container"&gt;
+    &lt;a href="#" class="footer-nav-item active"&gt;
+      &lt;i class="fas fa-home"&gt;&lt;/i&gt;
+      &lt;span class="footer-nav-label"&gt;Home&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="footer-nav-action"&gt;
+      &lt;i class="fas fa-plus"&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="footer-nav-item"&gt;
+      &lt;i class="fas fa-user"&gt;&lt;/i&gt;
+      &lt;span class="footer-nav-label"&gt;Profile&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
                 </div>
             </div>
         </section>

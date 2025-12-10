@@ -975,6 +975,379 @@
     }
   }
 
+  /* ========================================
+     BURGER MENU (Mobile)
+     ======================================== */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition);
+  }
+
+  .burger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .burger-line {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    transition: all var(--transition);
+  }
+
+  .burger-line + .burger-line {
+    margin-top: 4px;
+  }
+
+  /* Burger animation to X */
+  .burger.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  .burger.active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+  }
+
+  /* ========================================
+     MOBILE MENU OVERLAY
+     ======================================== */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-primary);
+    z-index: var(--z-modal);
+    transform: translateX(-100%);
+    transition: transform var(--transition-slow);
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .mobile-menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-full);
+    color: var(--text-secondary);
+    transition: all var(--transition);
+  }
+
+  .mobile-menu-close:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  .mobile-menu-body {
+    padding: 1rem;
+  }
+
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .mobile-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--text-primary);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition);
+  }
+
+  .mobile-menu-link:hover,
+  .mobile-menu-link:active {
+    background-color: var(--bg-secondary);
+  }
+
+  .mobile-menu-link.active {
+    background-color: var(--bg-secondary);
+    color: var(--color-brand);
+  }
+
+  .mobile-menu-link i,
+  .mobile-menu-link svg {
+    width: 1.25rem;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .mobile-menu-link.active i,
+  .mobile-menu-link.active svg {
+    color: var(--color-brand);
+  }
+
+  .mobile-menu-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.75rem 0;
+  }
+
+  .mobile-menu-section-title {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1rem 0.5rem;
+  }
+
+  /* Mobile menu backdrop */
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-overlay);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+  }
+
+  .mobile-menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ========================================
+     MOBILE FOOTER NAV (Sticky Bottom)
+     ======================================== */
+  .footer-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0));
+    z-index: var(--z-fixed);
+    box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.05);
+  }
+
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .footer-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    min-width: 4rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition);
+  }
+
+  .footer-nav-item:hover,
+  .footer-nav-item:active {
+    color: var(--text-secondary);
+  }
+
+  .footer-nav-item.active {
+    color: var(--color-brand);
+  }
+
+  .footer-nav-item i,
+  .footer-nav-item svg {
+    font-size: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .footer-nav-label {
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  /* Footer nav with center action button */
+  .footer-nav-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+    color: white;
+    border-radius: var(--border-radius-full);
+    margin-top: -1.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .footer-nav-action:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .footer-nav-action i,
+  .footer-nav-action svg {
+    font-size: 1.5rem;
+  }
+
+  /* Show footer nav on mobile */
+  @media (max-width: 768px) {
+    .footer-nav {
+      display: block;
+    }
+
+    /* Add padding to body to prevent content from hiding behind footer nav */
+    .has-footer-nav {
+      padding-bottom: 5rem;
+    }
+  }
+
+  /* Hide on larger screens */
+  @media (min-width: 769px) {
+    .footer-nav {
+      display: none !important;
+    }
+  }
+
+  /* ========================================
+     DESKTOP HEADER
+     ======================================== */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .header-gradient {
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+    border-bottom: none;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 4rem;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .header-gradient .header-logo {
+    color: white;
+  }
+
+  .header-logo img {
+    height: 2rem;
+    width: auto;
+  }
+
+  .header-nav {
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 769px) {
+    .header-nav {
+      display: flex;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Hide desktop elements on mobile */
+  .desktop-only {
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    .desktop-only {
+      display: flex;
+    }
+  }
+
+  /* Hide mobile elements on desktop */
+  .mobile-only {
+    display: flex;
+  }
+
+  @media (min-width: 769px) {
+    .mobile-only {
+      display: none !important;
+    }
+  }
+
 
   /* ========================================
      SIDEBAR
