@@ -1,0 +1,27 @@
+{
+  "name": "universal-css-template",
+  "version": "1.0.0",
+  "description": "A universal, app-agnostic CSS template built on Tailwind CSS v4 with reusable component classes",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npx @tailwindcss/cli -i ./src/styles.css -o ./assets/css/tailwind.css",
+    "build-css:watch": "npx @tailwindcss/cli -i ./src/styles.css -o ./assets/css/tailwind.css --watch",
+    "build-css:minify": "npx @tailwindcss/cli -i ./src/styles.css -o ./assets/css/tailwind.min.css --minify"
+  },
+  "keywords": [
+    "tailwindcss",
+    "css",
+    "template",
+    "components",
+    "design-system",
+    "dark-mode"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^4.1.12"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17"
+  }
+}
