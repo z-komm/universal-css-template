@@ -33,7 +33,12 @@ npm run build-css
 ```
 
 ```html
+<!-- Fonts (optional, für Inter Font) -->
+<link rel="stylesheet" href="assets/css/fonts.css">
+<!-- Tailwind CSS (compiled) -->
 <link rel="stylesheet" href="assets/css/tailwind.css">
+<!-- Font Awesome Icons (local) -->
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
 ```
 
 ---
@@ -97,12 +102,23 @@ npm run build-css:watch
 ```
 projekt/
 ├── src/
-│   └── styles.css          # Source CSS mit Custom Properties & Components
+│   └── styles.css              # Source CSS mit Custom Properties & Components
 ├── assets/
-│   └── css/
-│       └── tailwind.css    # Kompiliertes CSS (generiert)
-├── tailwind.config.js      # Tailwind Konfiguration
-└── package.json            # npm Scripts
+│   ├── css/
+│   │   ├── tailwind.css        # Kompiliertes CSS (generiert)
+│   │   ├── fonts.css           # Inter Font @font-face Definitionen
+│   │   └── fontawesome.min.css # Font Awesome Icons (lokal)
+│   ├── fonts/
+│   │   ├── Inter-Regular.woff2
+│   │   ├── Inter-Medium.woff2
+│   │   ├── Inter-SemiBold.woff2
+│   │   └── Inter-Bold.woff2
+│   └── webfonts/               # Font Awesome Webfonts
+│       ├── fa-brands-400.woff2
+│       ├── fa-regular-400.woff2
+│       └── fa-solid-900.woff2
+├── tailwind.config.js          # Tailwind Konfiguration
+└── package.json                # npm Scripts
 ```
 
 ### CSS-Aufbau (src/styles.css)
