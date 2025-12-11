@@ -27,15 +27,17 @@
 <body class="bg-gray-50 min-h-screen">
 
     <!-- Header -->
-    <nav class="brand-gradient shadow-lg">
+    <nav class="brand-gradient shadow-lg sticky top-0 z-50" id="mainNav">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-white">Universal CSS Template</h1>
-                <div class="flex items-center gap-4">
-                    <a href="#typography" class="nav-link">Typography</a>
-                    <a href="#components" class="nav-link-active">Components</a>
-                    <a href="#navigation" class="nav-link">Navigation</a>
-                    <a href="#utilities" class="nav-link">Utilities</a>
+                <div class="flex items-center gap-4" id="navLinks">
+                    <a href="#typography" class="nav-link-light" onclick="setActiveNav(this)">Typography</a>
+                    <a href="#components" class="nav-link-light nav-link-active" onclick="setActiveNav(this)">Components</a>
+                    <a href="#navigation" class="nav-link-light" onclick="setActiveNav(this)">Navigation</a>
+                    <a href="#dropdowns" class="nav-link-light" onclick="setActiveNav(this)">Dropdowns</a>
+                    <a href="#dashboard-cards" class="nav-link-light" onclick="setActiveNav(this)">Dashboard</a>
+                    <a href="#utilities" class="nav-link-light" onclick="setActiveNav(this)">Utilities</a>
                     <button onclick="toggleDarkMode()" class="btn-icon text-white" title="Toggle Dark Mode">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -1473,6 +1475,40 @@ function sum(a, b) {
                 document.getElementById('demoBackdrop').classList.remove('active');
             }
         });
+
+        // Set active navigation link
+        function setActiveNav(clickedLink) {
+            document.querySelectorAll('#navLinks a').forEach(link => {
+                link.classList.remove('nav-link-active');
+            });
+            clickedLink.classList.add('nav-link-active');
+        }
+
+        // Update nav on scroll (Intersection Observer)
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('#navLinks a[href^="#"]');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-link-active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('nav-link-active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
