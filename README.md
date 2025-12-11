@@ -545,6 +545,43 @@ function toggleDarkMode() {
 
 > **Wichtig:** Das `data-theme` Attribut ist notwendig, um die System-Präferenz (`prefers-color-scheme`) zu überschreiben. Die CSS-Regel `@media (prefers-color-scheme: dark)` greift nur, wenn `data-theme="light"` **nicht** gesetzt ist.
 
+### Smooth Scroll mit Sticky-Nav Offset
+
+Bei sticky Navigation werden Anker-Ziele von der Nav verdeckt. Dieses Script scrollt mit korrektem Offset:
+
+```javascript
+// Smooth scroll with offset for sticky nav
+// navId = ID des sticky Nav-Elements
+function initSmoothScroll(navId = 'mainNav') {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const nav = document.getElementById(navId);
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
+}
+
+// Initialisieren
+initSmoothScroll('mainNav');
+```
+
+> **Hinweis:** Das CSS enthält bereits `scroll-margin-top: 5rem` für `[id]` Elemente als Fallback, aber JavaScript ist zuverlässiger bei `scroll-behavior: smooth`.
+
 ---
 
 ## Anpassung für eigene Projekte

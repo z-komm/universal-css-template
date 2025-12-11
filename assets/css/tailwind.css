@@ -594,6 +594,11 @@
       display: flex;
     }
   }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -740,6 +745,12 @@
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     line-height: 1.5;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  [id] {
+    scroll-margin-top: 5rem;
   }
   :focus-visible {
     outline: 2px solid var(--color-brand);

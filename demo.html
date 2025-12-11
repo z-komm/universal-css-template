@@ -43,10 +43,55 @@
                     <button onclick="toggleDarkMode()" class="btn-icon text-white" title="Toggle Dark Mode">
                         <i class="fas fa-moon"></i>
                     </button>
+                    <!-- Mobile Burger Menu -->
+                    <button class="burger text-white md:hidden" onclick="toggleMobileMenu()">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenuBackdrop" class="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="font-bold text-lg">Navigation</span>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-body">
+            <nav class="mobile-menu-nav">
+                <a href="#typography" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-font"></i>
+                    <span>Typography</span>
+                </a>
+                <a href="#components" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Components</span>
+                </a>
+                <a href="#navigation" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-compass"></i>
+                    <span>Navigation</span>
+                </a>
+                <a href="#dropdowns" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-caret-down"></i>
+                    <span>Dropdowns</span>
+                </a>
+                <a href="#dashboard-cards" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#utilities" class="mobile-menu-link" onclick="toggleMobileMenu()">
+                    <i class="fas fa-tools"></i>
+                    <span>Utilities</span>
+                </a>
+            </nav>
+        </div>
+    </div>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
@@ -1423,6 +1468,17 @@ function sum(a, b) {
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const backdrop = document.getElementById('mobileMenuBackdrop');
+            const burger = document.querySelector('.burger');
+
+            menu.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+
         function toggleDarkMode() {
             const html = document.documentElement;
             const icon = document.querySelector('[onclick="toggleDarkMode()"] i');
@@ -1483,13 +1539,17 @@ function sum(a, b) {
             }
         });
 
-        // Close search modal on ESC
+        // Close search modal and mobile menu on ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 document.getElementById('demoSearchBackdrop').classList.remove('active');
                 document.getElementById('demoSearchModal').classList.remove('active');
                 document.getElementById('demoMobileMenu').classList.remove('active');
                 document.getElementById('demoBackdrop').classList.remove('active');
+                // Close main mobile navigation
+                document.getElementById('mobileMenu').classList.remove('active');
+                document.getElementById('mobileMenuBackdrop').classList.remove('active');
+                document.querySelector('.burger').classList.remove('active');
             }
         });
 
@@ -1526,6 +1586,29 @@ function sum(a, b) {
         }, observerOptions);
 
         sections.forEach(section => observer.observe(section));
+
+        // Smooth scroll with offset for sticky nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = document.getElementById('mainNav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Update URL without jumping
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
     </script>
 </body>
 </html>
