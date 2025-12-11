@@ -120,19 +120,19 @@
                     <div class="card-body space-y-4">
                         <div>
                             <p class="demo-label">Lead Text - 18px</p>
-                            <p class="text-lg text-gray-600">This is lead text that introduces a section. It's slightly larger than body text to draw attention.</p>
+                            <p class="text-lg text-theme-secondary">This is lead text that introduces a section. It's slightly larger than body text to draw attention.</p>
                         </div>
                         <div>
                             <p class="demo-label">Body Text - 16px</p>
-                            <p class="text-base text-gray-700">This is standard body text used for most content. It should be easy to read and scan. The line height is optimized for readability.</p>
+                            <p class="text-base text-theme-secondary">This is standard body text used for most content. It should be easy to read and scan. The line height is optimized for readability.</p>
                         </div>
                         <div>
                             <p class="demo-label">Small Text - 14px</p>
-                            <p class="text-sm text-gray-600">This is smaller text used for captions, labels, and secondary information.</p>
+                            <p class="text-sm text-theme-secondary">This is smaller text used for captions, labels, and secondary information.</p>
                         </div>
                         <div>
                             <p class="demo-label">Extra Small - 12px</p>
-                            <p class="text-xs text-gray-500">This is extra small text for fine print, timestamps, and metadata.</p>
+                            <p class="text-xs text-theme-muted">This is extra small text for fine print, timestamps, and metadata.</p>
                         </div>
                     </div>
                 </div>
@@ -143,10 +143,10 @@
                         <h3 class="font-semibold">Text Colors</h3>
                     </div>
                     <div class="card-body space-y-3">
-                        <p class="text-gray-900"><span class="demo-label inline mr-2">Primary:</span>Main headings and important text</p>
-                        <p class="text-gray-700"><span class="demo-label inline mr-2">Secondary:</span>Body text and descriptions</p>
-                        <p class="text-gray-500"><span class="demo-label inline mr-2">Muted:</span>Helper text and placeholders</p>
-                        <p class="text-gray-400"><span class="demo-label inline mr-2">Disabled:</span>Inactive or disabled text</p>
+                        <p class="text-theme-primary"><span class="demo-label inline mr-2">Primary:</span>Main headings and important text</p>
+                        <p class="text-theme-secondary"><span class="demo-label inline mr-2">Secondary:</span>Body text and descriptions</p>
+                        <p class="text-theme-muted"><span class="demo-label inline mr-2">Muted:</span>Helper text and placeholders</p>
+                        <p class="text-theme-muted opacity-60"><span class="demo-label inline mr-2">Disabled:</span>Inactive or disabled text</p>
                         <p class="text-brand"><span class="demo-label inline mr-2">Brand:</span>Links and accent text</p>
                         <p class="text-green-600"><span class="demo-label inline mr-2">Success:</span>Positive feedback text</p>
                         <p class="text-red-600"><span class="demo-label inline mr-2">Danger:</span>Error and warning text</p>
@@ -161,10 +161,10 @@
                         <h3 class="font-semibold">Unordered List</h3>
                     </div>
                     <div class="card-body">
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <ul class="list-disc list-inside space-y-2 text-theme-secondary">
                             <li>First item in the list</li>
                             <li>Second item with more text
-                                <ul class="list-circle list-inside ml-4 mt-1 space-y-1 text-gray-600">
+                                <ul class="list-circle list-inside ml-4 mt-1 space-y-1 text-theme-muted">
                                     <li>Nested item one</li>
                                     <li>Nested item two</li>
                                 </ul>
@@ -180,11 +180,11 @@
                         <h3 class="font-semibold">Ordered List</h3>
                     </div>
                     <div class="card-body">
-                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <ol class="list-decimal list-inside space-y-2 text-theme-secondary">
                             <li>First step in the process</li>
                             <li>Second step to follow</li>
                             <li>Third step with details
-                                <ol class="list-[lower-alpha] list-inside ml-4 mt-1 space-y-1 text-gray-600">
+                                <ol class="list-[lower-alpha] list-inside ml-4 mt-1 space-y-1 text-theme-muted">
                                     <li>Sub-step A</li>
                                     <li>Sub-step B</li>
                                 </ol>
@@ -201,16 +201,16 @@
                     <div class="card-body">
                         <dl class="space-y-3">
                             <div>
-                                <dt class="font-semibold text-gray-900">Term One</dt>
-                                <dd class="text-gray-600 text-sm ml-4">Definition for the first term</dd>
+                                <dt class="font-semibold text-theme-primary">Term One</dt>
+                                <dd class="text-theme-secondary text-sm ml-4">Definition for the first term</dd>
                             </div>
                             <div>
-                                <dt class="font-semibold text-gray-900">Term Two</dt>
-                                <dd class="text-gray-600 text-sm ml-4">Definition for the second term</dd>
+                                <dt class="font-semibold text-theme-primary">Term Two</dt>
+                                <dd class="text-theme-secondary text-sm ml-4">Definition for the second term</dd>
                             </div>
                             <div>
-                                <dt class="font-semibold text-gray-900">Term Three</dt>
-                                <dd class="text-gray-600 text-sm ml-4">Definition for the third term</dd>
+                                <dt class="font-semibold text-theme-primary">Term Three</dt>
+                                <dd class="text-theme-secondary text-sm ml-4">Definition for the third term</dd>
                             </div>
                         </dl>
                     </div>
@@ -224,9 +224,9 @@
                         <h3 class="font-semibold">Blockquote</h3>
                     </div>
                     <div class="card-body">
-                        <blockquote class="border-l-4 border-brand pl-4 italic text-gray-600">
+                        <blockquote class="border-l-4 border-brand pl-4 italic text-theme-secondary">
                             <p>"Design is not just what it looks like and feels like. Design is how it works."</p>
-                            <footer class="mt-2 text-sm text-gray-500 not-italic">— Steve Jobs</footer>
+                            <footer class="mt-2 text-sm text-theme-muted not-italic">— Steve Jobs</footer>
                         </blockquote>
                     </div>
                 </div>
@@ -238,11 +238,11 @@
                     <div class="card-body space-y-4">
                         <div>
                             <p class="demo-label">Inline Code</p>
-                            <p class="text-gray-700">Use <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600">npm install</code> to install packages.</p>
+                            <p class="text-theme-secondary">Use <code class="code-inline">npm install</code> to install packages.</p>
                         </div>
                         <div>
                             <p class="demo-label">Code Block</p>
-                            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm font-mono overflow-x-auto"><code>const greeting = "Hello World";
+                            <pre class="code-block"><code>const greeting = "Hello World";
 console.log(greeting);
 
 function sum(a, b) {
@@ -307,7 +307,7 @@ function sum(a, b) {
                         <h3 class="font-semibold">Standard Card</h3>
                     </div>
                     <div class="card-body">
-                        <p class="text-gray-600">Card body content goes here. This is a standard card component with header, body, and footer.</p>
+                        <p class="text-theme-secondary">Card body content goes here. This is a standard card component with header, body, and footer.</p>
                     </div>
                     <div class="card-footer">
                         <button class="btn-primary btn-sm">Action</button>
@@ -334,7 +334,7 @@ function sum(a, b) {
                     <i class="fas fa-plus-circle text-2xl text-brand"></i>
                     <div>
                         <h4 class="font-semibold">Create New</h4>
-                        <p class="text-sm text-gray-500">Click to add a new item</p>
+                        <p class="text-sm text-theme-muted">Click to add a new item</p>
                     </div>
                 </div>
             </div>
@@ -660,9 +660,9 @@ function sum(a, b) {
                     </div>
                     <div class="card-body">
                         <div class="media-upload-zone">
-                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
-                            <p class="text-gray-600 font-medium">Drop files here or click to upload</p>
-                            <p class="text-sm text-gray-400 mt-2">PNG, JPG, GIF up to 10MB</p>
+                            <i class="fas fa-cloud-upload-alt text-4xl text-theme-muted mb-4"></i>
+                            <p class="text-theme-secondary font-medium">Drop files here or click to upload</p>
+                            <p class="text-sm text-theme-muted mt-2">PNG, JPG, GIF up to 10MB</p>
                         </div>
                     </div>
                 </div>
@@ -678,8 +678,8 @@ function sum(a, b) {
                 <div class="linkedin-preview-header">
                     <div class="linkedin-preview-avatar bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold">JD</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900">John Doe</h4>
-                        <p class="text-xs text-gray-500">Software Engineer at Tech Co • 2h</p>
+                        <h4 class="font-semibold text-theme-primary">John Doe</h4>
+                        <p class="text-xs text-theme-muted">Software Engineer at Tech Co • 2h</p>
                     </div>
                 </div>
                 <div class="linkedin-preview-content">
@@ -764,12 +764,12 @@ function sum(a, b) {
                 <p class="demo-label">Burger Menu Button (animated on click)</p>
                 <div class="demo-grid">
                     <div class="demo-box flex items-center gap-4">
-                        <button class="burger bg-gray-800 text-white" id="burgerDemo1" onclick="this.classList.toggle('active')">
+                        <button class="burger bg-theme-primary text-white" id="burgerDemo1" onclick="this.classList.toggle('active')">
                             <span class="burger-line"></span>
                             <span class="burger-line"></span>
                             <span class="burger-line"></span>
                         </button>
-                        <span class="text-sm text-gray-600">Click to toggle animation</span>
+                        <span class="text-sm text-theme-secondary">Click to toggle animation</span>
                     </div>
                 </div>
             </div>
@@ -837,11 +837,11 @@ function sum(a, b) {
             <!-- Footer Nav Demo -->
             <div class="mb-8">
                 <p class="demo-label">Mobile Footer Navigation (Sticky Bottom)</p>
-                <p class="text-sm text-gray-500 mb-4">This shows on mobile devices (&lt;768px). Resize browser to see it in action, or view the static preview below:</p>
+                <p class="text-sm text-theme-muted mb-4">This shows on mobile devices (&lt;768px). Resize browser to see it in action, or view the static preview below:</p>
 
                 <!-- Static Preview -->
                 <div class="rounded-lg overflow-hidden" style="max-width: 400px; background-color: var(--bg-primary); border: 1px solid var(--border-color);">
-                    <div class="border-t border-gray-200 py-2" style="box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.05);">
+                    <div class="border-t border-theme py-2" style="box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.05);">
                         <div class="flex justify-around items-center max-w-md mx-auto">
                             <a href="#" class="footer-nav-item active" style="display: flex;">
                                 <i class="fas fa-home"></i>
@@ -908,7 +908,7 @@ function sum(a, b) {
                 </div>
                 <div class="card-body">
                     <p class="demo-label">Desktop Header with Gradient</p>
-                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm font-mono overflow-x-auto mb-4"><code>&lt;header class="header header-gradient"&gt;
+                    <pre class="code-block mb-4"><code>&lt;header class="header header-gradient"&gt;
   &lt;div class="header-container"&gt;
     &lt;div class="header-left"&gt;
       &lt;a href="#" class="header-logo"&gt;MyApp&lt;/a&gt;
@@ -924,7 +924,7 @@ function sum(a, b) {
 &lt;/header&gt;</code></pre>
 
                     <p class="demo-label">Mobile Footer Navigation</p>
-                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm font-mono overflow-x-auto"><code>&lt;nav class="footer-nav"&gt;
+                    <pre class="code-block"><code>&lt;nav class="footer-nav"&gt;
   &lt;div class="footer-nav-container"&gt;
     &lt;a href="#" class="footer-nav-item active"&gt;
       &lt;i class="fas fa-home"&gt;&lt;/i&gt;
@@ -980,7 +980,7 @@ function sum(a, b) {
                             <button class="flex items-center gap-2 dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
                                 <div class="avatar avatar-sm">JD</div>
                                 <span class="font-medium">John Doe</span>
-                                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                                <i class="fas fa-chevron-down text-xs text-theme-muted"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-left" style="min-width: 14rem;">
                                 <div class="dropdown-user-header">
@@ -1180,14 +1180,14 @@ function sum(a, b) {
                             <div class="avatar avatar-sm bg-green-500">JD</div>
                             <div class="flex-1">
                                 <p class="text-sm font-medium">John created a new project</p>
-                                <p class="text-xs text-gray-500">2 hours ago</p>
+                                <p class="text-xs text-theme-muted">2 hours ago</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="avatar avatar-sm bg-blue-500">SM</div>
                             <div class="flex-1">
                                 <p class="text-sm font-medium">Sarah commented on your post</p>
-                                <p class="text-xs text-gray-500">4 hours ago</p>
+                                <p class="text-xs text-theme-muted">4 hours ago</p>
                             </div>
                         </div>
                     </div>
@@ -1317,13 +1317,13 @@ function sum(a, b) {
                                 <button class="tab-trigger" onclick="switchTab(this, 'tab1-3')">Settings</button>
                             </div>
                             <div class="tab-content active" id="tab1-1">
-                                <p class="text-gray-600">Overview tab content. This is the default active tab.</p>
+                                <p class="text-theme-secondary">Overview tab content. This is the default active tab.</p>
                             </div>
                             <div class="tab-content" id="tab1-2">
-                                <p class="text-gray-600">Details tab content with more information.</p>
+                                <p class="text-theme-secondary">Details tab content with more information.</p>
                             </div>
                             <div class="tab-content" id="tab1-3">
-                                <p class="text-gray-600">Settings tab content for configuration options.</p>
+                                <p class="text-theme-secondary">Settings tab content for configuration options.</p>
                             </div>
                         </div>
                     </div>
@@ -1341,13 +1341,13 @@ function sum(a, b) {
                                 <button class="tab-trigger" onclick="switchTab(this, 'tab2-3')">Month</button>
                             </div>
                             <div class="tab-content active" id="tab2-1">
-                                <p class="text-gray-600">Daily view selected.</p>
+                                <p class="text-theme-secondary">Daily view selected.</p>
                             </div>
                             <div class="tab-content" id="tab2-2">
-                                <p class="text-gray-600">Weekly view selected.</p>
+                                <p class="text-theme-secondary">Weekly view selected.</p>
                             </div>
                             <div class="tab-content" id="tab2-3">
-                                <p class="text-gray-600">Monthly view selected.</p>
+                                <p class="text-theme-secondary">Monthly view selected.</p>
                             </div>
                         </div>
                     </div>

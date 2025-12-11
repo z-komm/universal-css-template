@@ -621,7 +621,25 @@ Füge in `src/styles.css` im `@layer components` Block hinzu:
 </button>
 ```
 
-### 2. CSS Variables für Theming nutzen
+### 2. Theme-Aware Utility-Klassen verwenden
+
+Für Dark Mode kompatible Farben nutze die `text-theme-*` und `bg-theme-*` Klassen:
+
+```html
+<!-- Gut: Theme-aware Klassen (reagieren auf Dark Mode) -->
+<p class="text-theme-primary">Haupttext</p>
+<p class="text-theme-secondary">Sekundärtext</p>
+<p class="text-theme-muted">Dezenter Text</p>
+<div class="bg-theme-primary">Primärer Hintergrund</div>
+<div class="bg-theme-secondary">Sekundärer Hintergrund</div>
+<div class="border border-theme">Rahmen</div>
+
+<!-- Vermeiden: Hardcoded Tailwind Colors (ändern sich nicht im Dark Mode) -->
+<p class="text-gray-600">Funktioniert nicht im Dark Mode</p>
+<div class="bg-white">Bleibt immer weiß</div>
+```
+
+### 3. CSS Variables in Custom Styles
 
 ```css
 /* Gut: Variable nutzen */
@@ -637,7 +655,7 @@ Füge in `src/styles.css` im `@layer components` Block hinzu:
 }
 ```
 
-### 3. Responsive Design
+### 4. Responsive Design
 
 ```html
 <!-- Mobile-First Approach -->
@@ -646,7 +664,7 @@ Füge in `src/styles.css` im `@layer components` Block hinzu:
 </div>
 ```
 
-### 4. Semantic HTML mit CSS-Klassen
+### 5. Semantic HTML mit CSS-Klassen
 
 ```html
 <!-- Gut -->
@@ -668,13 +686,18 @@ Folgende Dateien sollten ins Repository:
 
 ```
 ├── src/
-│   └── styles.css              # Source CSS
+│   └── styles.css              # Source CSS mit Custom Properties & Components
 ├── assets/
-│   └── css/
-│       └── tailwind.css        # Kompiliertes CSS
-├── tailwind.config.js          # Tailwind Config
+│   ├── css/
+│   │   ├── tailwind.css        # Kompiliertes CSS (generiert)
+│   │   ├── fonts.css           # Inter Font @font-face
+│   │   └── fontawesome.min.css # Font Awesome Icons
+│   ├── fonts/                  # Inter Webfonts
+│   └── webfonts/               # Font Awesome Webfonts
+├── demo.html                   # Komponenten-Showcase
+├── tailwind.config.js          # Tailwind Konfiguration
 ├── package.json                # Dependencies & Scripts
-├── CSS-SYSTEM.md               # Diese Dokumentation
+├── README.md                   # Diese Dokumentation
 └── .gitignore                  # node_modules ausschließen
 ```
 
@@ -695,7 +718,7 @@ node_modules/
 1. Definiere in `src/styles.css` im `@layer components`
 2. Führe `npm run build-css` aus
 3. Teste die Komponente
-4. Dokumentiere in dieser Datei
+4. Dokumentiere in der README.md
 
 ### Bug melden
 
