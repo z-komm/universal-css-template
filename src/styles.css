@@ -117,18 +117,18 @@
 /* ===== DARK MODE ===== */
 .dark,
 [data-theme="dark"] {
-  --bg-primary: var(--color-gray-900);
-  --bg-secondary: var(--color-gray-800);
-  --bg-tertiary: var(--color-gray-700);
-  --bg-elevated: var(--color-gray-800);
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-elevated: #1f2937;
   --bg-overlay: rgba(0, 0, 0, 0.7);
 
-  --text-primary: var(--color-gray-50);
-  --text-secondary: var(--color-gray-300);
-  --text-muted: var(--color-gray-500);
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #6b7280;
 
-  --border-color: var(--color-gray-700);
-  --border-color-dark: var(--color-gray-600);
+  --border-color: #374151;
+  --border-color-dark: #4b5563;
 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4);
@@ -138,15 +138,15 @@
 /* Auto Dark Mode (System Preference) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg-primary: var(--color-gray-900);
-    --bg-secondary: var(--color-gray-800);
-    --bg-tertiary: var(--color-gray-700);
-    --bg-elevated: var(--color-gray-800);
-    --text-primary: var(--color-gray-50);
-    --text-secondary: var(--color-gray-300);
-    --text-muted: var(--color-gray-500);
-    --border-color: var(--color-gray-700);
-    --border-color-dark: var(--color-gray-600);
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --bg-elevated: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #6b7280;
+    --border-color: #374151;
+    --border-color-dark: #4b5563;
   }
 }
 

@@ -24,7 +24,7 @@
         .demo-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="min-h-screen" style="background-color: var(--bg-secondary);">
 
     <!-- Header -->
     <nav class="brand-gradient shadow-lg sticky top-0 z-50" id="mainNav">
@@ -840,7 +840,7 @@ function sum(a, b) {
                 <p class="text-sm text-gray-500 mb-4">This shows on mobile devices (&lt;768px). Resize browser to see it in action, or view the static preview below:</p>
 
                 <!-- Static Preview -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden bg-white" style="max-width: 400px;">
+                <div class="rounded-lg overflow-hidden" style="max-width: 400px; background-color: var(--bg-primary); border: 1px solid var(--border-color);">
                     <div class="border-t border-gray-200 py-2" style="box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.05);">
                         <div class="flex justify-around items-center max-w-md mx-auto">
                             <a href="#" class="footer-nav-item active" style="display: flex;">
@@ -1410,11 +1410,11 @@ function sum(a, b) {
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200 py-8 mt-8 bg-white">
+    <footer class="border-t py-8 mt-8" style="background-color: var(--bg-primary); border-color: var(--border-color);">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-600 font-medium">Universal CSS Template v1.0.0</p>
-            <p class="text-gray-400 text-sm mt-1">Built with Tailwind CSS v4 + Inter Font + Font Awesome Free</p>
-            <p class="text-gray-400 text-sm mt-2">
+            <p class="font-medium" style="color: var(--text-secondary);">Universal CSS Template v1.0.0</p>
+            <p class="text-sm mt-1" style="color: var(--text-muted);">Built with Tailwind CSS v4 + Inter Font + Font Awesome Free</p>
+            <p class="text-sm mt-2" style="color: var(--text-muted);">
                 <i class="fas fa-code mr-1"></i> 100% Offline • No CDN Dependencies
             </p>
         </div>
@@ -1422,29 +1422,44 @@ function sum(a, b) {
 
     <script>
         function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
+            const html = document.documentElement;
             const icon = document.querySelector('[onclick="toggleDarkMode()"] i');
-            if (document.documentElement.classList.contains('dark')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
+            const currentTheme = html.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                // Switch to light
+                html.setAttribute('data-theme', 'light');
+                html.classList.remove('dark');
                 icon.classList.remove('fa-sun');
                 icon.classList.add('fa-moon');
                 localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark
+                html.setAttribute('data-theme', 'dark');
+                html.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
             }
         }
 
         // Restore theme on load
-        if (localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
             const icon = document.querySelector('[onclick="toggleDarkMode()"] i');
-            if (icon) {
+            if (icon && theme === 'dark') {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             }
-        }
+        })();
 
         // Tab switching function
         function switchTab(trigger, contentId) {
