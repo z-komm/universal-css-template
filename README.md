@@ -20,8 +20,8 @@ Ein **universelles, app-agnostisches CSS-Template** basierend auf Tailwind CSS v
 
 ```bash
 # 1. Repository klonen
-git clone <repo-url>
-cd linki
+git clone https://github.com/z-komm/universal-css-template.git
+cd universal-css-template
 
 # 2. Dependencies installieren
 npm install
@@ -516,17 +516,34 @@ Das System unterstützt drei Dark-Mode-Varianten:
 
 ```javascript
 function toggleDarkMode() {
-  document.documentElement.classList.toggle('dark');
-  localStorage.setItem('theme',
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-  );
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+
+  if (currentTheme === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    html.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    html.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
 }
 
-// Beim Laden wiederherstellen
-if (localStorage.getItem('theme') === 'dark') {
-  document.documentElement.classList.add('dark');
-}
+// Beim Laden wiederherstellen (respektiert System-Präferenz)
+(function() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+  document.documentElement.setAttribute('data-theme', theme);
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+})();
 ```
+
+> **Wichtig:** Das `data-theme` Attribut ist notwendig, um die System-Präferenz (`prefers-color-scheme`) zu überschreiben. Die CSS-Regel `@media (prefers-color-scheme: dark)` greift nur, wenn `data-theme="light"` **nicht** gesetzt ist.
 
 ---
 
