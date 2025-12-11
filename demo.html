@@ -28,16 +28,18 @@
 
     <!-- Header -->
     <nav class="brand-gradient shadow-lg sticky top-0 z-50" id="mainNav">
-        <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-white">Universal CSS Template</h1>
-                <div class="flex items-center gap-4" id="navLinks">
-                    <a href="#typography" class="nav-link-light" onclick="setActiveNav(this)">Typography</a>
-                    <a href="#components" class="nav-link-light nav-link-active" onclick="setActiveNav(this)">Components</a>
-                    <a href="#navigation" class="nav-link-light" onclick="setActiveNav(this)">Navigation</a>
-                    <a href="#dropdowns" class="nav-link-light" onclick="setActiveNav(this)">Dropdowns</a>
-                    <a href="#dashboard-cards" class="nav-link-light" onclick="setActiveNav(this)">Dashboard</a>
-                    <a href="#utilities" class="nav-link-light" onclick="setActiveNav(this)">Utilities</a>
+                <h1 class="text-xl sm:text-2xl font-bold text-white">Universal CSS Template</h1>
+                <div class="flex items-center gap-2 sm:gap-4" id="navLinks">
+                    <div class="hidden md:flex items-center gap-4">
+                        <a href="#typography" class="nav-link-light" onclick="setActiveNav(this)">Typography</a>
+                        <a href="#components" class="nav-link-light nav-link-active" onclick="setActiveNav(this)">Components</a>
+                        <a href="#navigation" class="nav-link-light" onclick="setActiveNav(this)">Navigation</a>
+                        <a href="#dropdowns" class="nav-link-light" onclick="setActiveNav(this)">Dropdowns</a>
+                        <a href="#dashboard-cards" class="nav-link-light" onclick="setActiveNav(this)">Dashboard</a>
+                        <a href="#utilities" class="nav-link-light" onclick="setActiveNav(this)">Utilities</a>
+                    </div>
                     <button onclick="toggleDarkMode()" class="btn-icon text-white" title="Toggle Dark Mode">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -46,7 +48,7 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
         <!-- ==================== TYPOGRAPHY ==================== -->
         <section id="typography" class="demo-section">
@@ -1410,8 +1412,8 @@ function sum(a, b) {
     </main>
 
     <!-- Footer -->
-    <footer class="border-t py-8 mt-8" style="background-color: var(--bg-primary); border-color: var(--border-color);">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+    <footer class="border-t py-6 sm:py-8 mt-8" style="background-color: var(--bg-primary); border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="font-medium" style="color: var(--text-secondary);">Universal CSS Template v1.0.0</p>
             <p class="text-sm mt-1" style="color: var(--text-muted);">Built with Tailwind CSS v4 + Inter Font + Font Awesome Free</p>
             <p class="text-sm mt-2" style="color: var(--text-muted);">
